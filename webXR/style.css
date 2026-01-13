@@ -1,32 +1,94 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
+body {
+    background-color: #FDF7F2;
+    color: #3A2F2B;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-#backBtn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #f4b183; /* warm accent color */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-#backBtn:hover {
-  background: #e29e5e; /* slightly darker on hover */
+.hero {
+    text-align: center;
+    padding: 60px 0 20px;
 }
 
+.avatar {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
 
-#renderCanvas {
-  width: 100%;
-  height: 100%;
-  display: block;
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.tagline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #7A6C66;
+}
+
+nav {
+    margin-top: 25px;
+}
+
+.nav-btn {
+    background: #E4C3B2;
+    padding: 10px 20px;
+    margin: 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #D5A38F;
+}
+
+.back {
+    background: #AD8A7C;
+}
+
+.section {
+    margin: 50px 0;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #3A2F2B;
+    margin-bottom: 12px;
+}
+
+.gallery {
+    display: flex;
+    gap: 14px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 12px;
+}
+
+.wide-img {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 14px;
+}
+
+.note {
+    font-size: 0.95rem;
+    color: #8F7B74;
+    margin-top: 10px;
+    font-style: italic;
 }
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Lab | Holiness Kerandi</title>
+    <link rel="stylesheet" href="data.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Data Lab</h1>
+        <p class="subtitle">Where human stories meet computational insight.</p>
+
+        <div class="top-actions">
+            <a href="personna.html" class="btn secondary">Back to Personas</a>
+            <a href="Holiness_Kerandi_Resume.pdf" class="btn resume">Resume</a>
+        </div>
+    </header>
+
+    <!-- SEARCH + FILTERS -->
+    <section class="search-section">
+        <input type="text" class="search-bar" placeholder="Search projects, tech, narratives…">
+
+        <select class="filter">
+            <option value="all">All</option>
+            <option value="notebook">Notebook Available</option>
+            <option value="ethics">Ethical Case Study</option>
+            <option value="visual">Data Storytelling</option>
+        </select>
+    </section>
+
+    <!-- PROJECT GRID -->
+    <section class="grid">
+
+        <!-- PROJECT CARD 1 -->
+        <div class="card" onclick="openModal('carceralModal')">
+            <img src="img/carceral.png" class="card-img">
+            <div class="card-content">
+                <h3>Carceral Algorithms Research</h3>
+                <p class="small">Explored racial bias in parole recommendations; presented at academic symposia.</p>
+                <div class="tags">
+                    <span>Python</span><span>Pandas</span><span>Jupyter</span><span class="ethics">Ethics</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- PROJECT CARD — Spotify Hot 100 -->
+        <div class="card" onclick="openModal('spotifyModal')">
+            <img src="img/hot100.png" class="card-img">
+            <div class="card-content">
+                <h3>Spotify Hot 100: Emotional Trends</h3>
+                <p class="small">
+                    Cultural analytics of lyrical themes in North American chart-toppers (1950-1990).
+                </p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span class="visual">Data Storytelling</span>
+                    <span class="ethics">Cultural Insight</span>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+    <!-- MODAL TEMPLATE — CARCERAL -->
+    <div id="carceralModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('carceralModal')">&times;</span>
+            <h2>Carceral Algorithms Research</h2>
+            <p class="modal-sub">Data storytelling & ethical analysis</p>
+
+            <p>
+                This project examined discrepancies in parole recommendation algorithms using anonymized open datasets.  
+                I investigated how race correlated with risk scores, release decisions, and error rates.
+            </p>
+
+            <h3>Methods</h3>
+            <ul>
+                <li>Python (Pandas, NumPy), data cleaning & pipeline design</li>
+                <li>Distribution analysis & pairwise correlations</li>
+                <li>Model fairness metrics (FPR, FNR, precision)</li>
+                <li>Ethical interpretability using contextual narrative framing</li>
+            </ul>
+
+            <h3>Key Findings</h3>
+            <p>Clear disparities existed between demographic groups, with inflated risk predictions in specific populations.</p>
+
+            <a href="carceral_notebook.html" class="modal-link">View Notebook →</a>
+        </div>
+    </div>
+
+
+    <!-- MODAL — Spotify Hot 100 Analysis -->
+    <div id="spotifyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('spotifyModal')">&times;</span>
+
+            <h2>Spotify Hot 100: Emotional Trends</h2>
+            <p class="modal-sub">Cultural analytics • Sentiment modeling • Behavioral insight</p>
+
+            <p>
+                This project explores emotional and lyrical trends in North American Hot 100 chart-toppers 
+                (2010–2024). Using sentiment analysis, theme clustering, and frequency modeling, 
+                I examined how mainstream music reflects shifting cultural moods.
+            </p>
+
+            <h3>Key Findings</h3>
+            <ul>
+                <li><strong>Self-love is the fastest growing theme</strong> — empowerment and autonomy increasingly dominate the charts.</li>
+                <li><strong>Serenades & heartache remain the most stable emotional categories</strong> across all years.</li>
+                <li><strong>Emotional narratives are more complex</strong> — songs now blend grief, empowerment, nostalgia, and confidence.</li>
+                <li><strong>Cultural shift observed:</strong> from dependency → autonomy, and from heartbreak → personal healing.</li>
+            </ul>
+
+            <h3>Technical Approach</h3>
+            <ul>
+                <li>Python (Pandas, NLTK/TextBlob) for sentiment + theme classification</li>
+                <li>Cleaning + structuring multi-year datasets</li>
+                <li>Trend modeling across emotional categories</li>
+                <li>Visualization of long-term shifts in narrative tone</li>
+            </ul>
+
+            <h3>Why It Matters</h3>
+            <p>
+                Music mirrors cultural psychology. The rise of self-love narratives reflects broader 
+                social shifts around identity, autonomy, mental health, and gender empowerment. 
+                This analysis demonstrates my ability to translate behavioral data into meaningful 
+                cultural stories — essential for roles in music tech, personalization, and 
+                content intelligence.
+            </p>
+
+            <a href="DataHot100.html" class="modal-link" target="_blank">View Notebook →</a>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+

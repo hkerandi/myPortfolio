@@ -1,0 +1,136 @@
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  background: #faf7f4;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  opacity: 0.75;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.primary-btn {
+  background: #111;
+  color: #f6eadf;
+  padding: 12px 28px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #000;
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  border-left: 5px solid #b89c63;
+  padding-left: 14px;
+  margin: 60px 0 20px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: #fff;
+  border: 1px solid #e7dfd8;
+  border-radius: 14px;
+  padding: 26px;
+  margin-bottom: 26px;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #b89c63;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.metrics {
+  margin-top: 12px;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.case-btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: #b89c63;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.case-btn:hover {
+  text-decoration: underline;
+}
+
+/* Coming Soon Tag */
+.label {
+  display: inline-block;
+  margin-top: 12px;
+  background: #b89c63;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+
+.case-btn.inactive {
+  color: #ccc;
+  pointer-events: none;
+}
+
+/* EXPERIENCE */
+.exp-item {
+  margin-bottom: 20px;
+}
+
+.exp-item h4 {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.exp-text {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-links a {
+  color: #111;
+  margin: 0 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  color: #b89c63;
+}
+

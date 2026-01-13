@@ -8,6 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
 
+<script>
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // prevent scroll
+    }
+}
+
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // restore scroll
+    }
+}
+
+// Close modal when clicking outside modal-content
+window.onclick = function(event) {
+    document.querySelectorAll(".modal").forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+};
+</script>
+
+
 <body>
 
     <!-- HEADER -->
@@ -67,6 +96,24 @@
             </div>
         </div>
         </section>
+
+
+        <!-- PROJECT CARD — Scotland Slavery Legacies -->
+        <div class="card" onclick="openModal('scotlandModal')">
+            <img src="img/scotland.jpeg" class="card-img">
+            <div class="card-content">
+                <h3>Scotland Slavery Legacies </h3>
+                <p class="small">
+                    A prototype on consolidating data by the Scotland Slavery Legacies Project
+                </p>
+                <div class="tags">
+                    <span class="visual">Data Storytelling</span>
+                    <span class="ethics">Cultural Insight</span>
+                </div>
+            </div>
+        </div>
+        </section>
+
 
 
     <!-- MODAL TEMPLATE — CARCERAL -->
@@ -141,6 +188,25 @@
     </div>
 
 
+    <!-- MODAL TEMPLATE — SCOTLAND -->
+    <div id="scotlandModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('scotlandModal')">&times;</span>
+            <h2>Scotland Slavery Legacies</h2>
+            <p class="modal-sub">Data storytelling, ethical analysis, qualitative data & research</p>
+
+            <h3>Why It Matters</h3>
+            <p>
+              Many people move through places without truly knowing their historical significance. Others pass through the same spaces and feel something: an unspoken sense that something happened there, whether the experience was good or bad.
+              Scotland has chosen to confront the skeletons in her closet by educating her population about the role she played in slavery and colonialism. This project marked my introduction to storytelling from a data-driven perspective.
+              This is sensitive information, particularly because there are still living populations affected by the legacy of slavery and colonialism. For that reason, I worked alongside a team to present the data in a way that avoids retraumatization or placing blame on the descendants of either party. Instead, the goal was to provide historical context—what happened at the time, and how those events continue to shape society today.
+              As my professor often says, “History is now.”
+
+            </p>
+
+            <a href= "https://sites.google.com/bucknell.edu/addressing-slavery-and-colonia/home?read_current=1" class="modal-link">View Site →</a>
+        </div>
+    </div>
 
 
 </body>

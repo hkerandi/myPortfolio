@@ -34,7 +34,7 @@ const createScene = () => {
 
 
   // Floating welcome text
-  const plane = BABYLON.MeshBuilder.CreatePlane("textPlane", {width: 5, height: 2}, scene);
+  // const plane = BABYLON.MeshBuilder.CreatePlane("textPlane", {width: 5, height: 2}, scene);
   plane.position.y = 2;
 
   const texture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane);

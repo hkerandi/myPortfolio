@@ -32,6 +32,35 @@ h1 {
     line-height: 1.6;
 }
 
+
+.featured-project {
+    margin-top: 3rem;
+    padding: 5rem;
+    background: #685039; /* warm neutral */
+    border-radius: 16px;
+    max-width: 720px;
+    alignment-baseline: central;
+}
+
+.project-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+}
+
+.project-tagline {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.project-card ul {
+    margin-left: 1.2rem;
+}
+
+.project-links a {
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
 .cta {
     display: inline-block;
     padding: 14px 30px;

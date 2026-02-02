@@ -3,42 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holiness Kerandi</title>
-    <link rel="stylesheet" href="home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <title>Holiness Kerandi — Data Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+
+
 </head>
 
 <body>
 
     <section class="hero">
+        <div class="hero-content">
+            
+            <!-- LEFT SIDE - COMIC -->
+            <div class="hero-left">
+                <img class="comic-strip" src="img/hero1.jpg" alt="My Journey Into Data Engineering">
+                <p class="comic-caption">
+                    <!-- <strong> My Journey Into Data Engineering</strong><br> -->
+                    <!-- Designed in Canva · Four panels showing the evolution from solo learning → finding purpose → collaboration → building systems that matter -->
+                </p>
+            </div>
 
-        <!-- COMIC STRIP HERO -->
-        <img class="comic-strip" src="img/hero_comic.png" alt="My Journey Comic">
+            <!-- RIGHT SIDE - CREDENTIALS -->
+            <div class="hero-right">
+                <h1 class="greeting">Hi, I'm Holiness 👋🏾</h1>
+                <h2 class="role">Data Engineer</h2>
+                <p class="tagline">"From Pixels to Pipelines"</p>
+                <p class="intro-text">
+                    I build data systems with the same intentionality I bring to visual storytelling. 
+                    Turning messy real-world data into production-ready infrastructure that drives justice and insight.
+                </p>
 
-        <!-- INTRO -->
-        <h1>Hi, I’m Holiness 👋🏾</h1>
-        <h2>Full-Stack Developer & Data-Driven Engineer</h2>
-        <p class="intro-text">
-            I build data-backed applications that turn messy real-world data
-            into usable tools and insights.
-        </p>
+                <!-- Current Project Box -->
+                <div class="current-project">
+                    <div class="current-project-label">📍 Currently Building</div>
+                    <h3 class="current-project-title">Carceral Data Platform</h3>
+                    <p class="current-project-desc">
+                        Aggregating 50K+ incarceration records across Pennsylvania with spatial analysis tools. Full-stack data infrastructure launching March 2025.
+                    </p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">ArcGIS</span>
+                        <span class="tech-badge">Pandas</span>
+                    </div>
+                </div>
 
-        <h2>My tech stack:</h2>
-        <p>React · JavaScript · Python · SQL · Java · Pandas · Git</p>
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-emoji">📊</span>
+                        <span class="stat-text">10,000+ records analyzed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-emoji">🗄️</span>
+                        <span class="stat-text">5+ data sources integrated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-emoji">🏆</span>
+                        <span class="stat-text">1st Place Data Hackathon</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-emoji">🎤</span>
+                        <span class="stat-text">2 conference presentations</span>
+                    </div>
+                </div>
 
-        <p> Projects, personas, and the thinking behind the code.</p>
-        <!-- MAIN CTA -->
-        <a href="personna.html" class="cta"> Explore my worlds →</a>
+                <!-- CTA Buttons -->
+                <div class="cta-buttons">
+                    <a href="#personas" class="btn-primary">View Projects →</a>
+                    <a href="img/DataEngineering Resume.pdf" class="btn-secondary">Download Resume</a>
+                </div>
+            </div>
 
-        <!-- FOOTER SOCIALS -->
-        <footer>
-            <a href="https://www.linkedin.com/in/holiness-kerandi-20b170250/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/hkerandi" target="_blank">GitHub</a>
-            <a href="mailto:holinesskerandi@gmail.com">Email</a>
-        </footer>
-
+        </div>
     </section>
+
+    <!-- PERSONAS SECTION -->
+    <section class="personas-section" id="personas">
+        <div class="personas-header">
+            <h2>Explore by Focus Area</h2>
+            <p>Projects, personas, and the thinking behind the code</p>
+        </div>
+
+        <div class="personas">
+            <a href="corporate.html" class="card corporate">
+                <img src="img/avatars/corprateBaddie_front.png" alt="Corporate Baddie">
+                <h3>Corporate Baddie</h3>
+                <p>Poised. Powerful. Multi-skilled.</p>
+                <span class="card-link">Full-Stack Systems →</span>
+            </a>
+
+            <a href="webXR/auntie.html" class="card auntie">
+                <img src="img/avatars/tantine_front.png" alt="Rich Auntie">
+                <h3>Rich Auntie</h3>
+                <p>Luxury meets storytelling & XR.</p>
+                <span class="card-link">Creative Tech →</span>
+            </a>
+
+            <a href="data.html" class="card data">
+                <img src="img/avatars/data_front.png" alt="Data Diva">
+                <h3>Data Diva</h3>
+                <p>Knows the numbers. Owns the room.</p>
+                <span class="card-link">Analytics & Pipelines →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Holiness Kerandi</p>
+        <a href="https://www.linkedin.com/in/holiness-kerandi-20b170250/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/hkerandi" target="_blank">GitHub</a>
+        <a href="mailto:holinesskerandi@gmail.com">Email</a>
+    </footer>
 
 </body>
 </html>
-

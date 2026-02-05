@@ -340,14 +340,14 @@ body::before {
   transform: translateY(-10px);
 }
 
-.card.corporate {
+/* .card.corporate {
   border-color: rgba(137, 194, 217, 0.3);
 }
 
 .card.corporate:hover {
   border-color: #89c2d9;
   box-shadow: 0 0 20px rgba(137, 194, 217, 0.4), 0 0 40px rgba(137, 194, 217, 0.2);
-}
+} */
 
 .card.auntie {
   border-color: rgba(247, 196, 214, 0.3);
@@ -384,7 +384,7 @@ body::before {
   font-weight: 700;
 }
 
-.card.corporate h3 { color: #89c2d9; }
+/* .card.corporate h3 { color: #89c2d9; } */
 .card.auntie h3 { color: #f7c4d6; }
 .card.data h3 { color: #d0f4de; }
 

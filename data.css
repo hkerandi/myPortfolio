@@ -149,7 +149,8 @@ section {
 }
 
 .card-img {
-    height: 170px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     filter: contrast(1.05) brightness(0.95);
 }
 

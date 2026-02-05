@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lab | Holiness Kerandi</title>
+    <title>The Workshop | Holiness Kerandi</title>
     <link rel="stylesheet" href="data.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -41,13 +41,14 @@ window.onclick = function(event) {
 
     <!-- HEADER -->
     <header class="header">
-        <h1>Data Lab</h1>
-        <p class="subtitle">Where human stories meet computational insight.</p>
+        <h1> The Workshop</h1>
+        
+        <p class="subtitle"> Building data systems from messy sources to production platforms</p>
 
-        <div class="top-actions">
+       <!-- <div class="top-actions">
             <a href="img/DataEngineering Resume.pdf" class="btn resume">Resume</a>
         </div>
-    </header>
+    </header> -->
 
     <!-- SEARCH + FILTERS -->
     <!-- <section class="search-section">
@@ -69,6 +70,18 @@ window.onclick = function(event) {
             </div>
         </div>
 
+        <div class="card" onclick="openModal('frenzyModal')">
+        <img src="img/frenzy.png" class="card-img">
+        <div class="card-content" ></div>
+           <h3>Key frenzy </h3> 
+           <p> Key Frenzy reimagines the classic arcade chase as a typing challenge.</p>
+            <div class="tags">
+                    <span>Java</span><span>Agile</span></span>
+                </div>
+            </div>
+        </div>
+
+    
         <!-- PROJECT CARD — Scotland Slavery Legacies -->
         <div class="card" onclick="openModal('scotlandModal')">
             <img src="img/scotland.jpeg" class="card-img">
@@ -176,6 +189,35 @@ window.onclick = function(event) {
 " class="modal-link" target="_blank">View Notebook →</a>
         </div>
     </div>
+
+    <!-- MODAL TEMPLATE — KEY FRENZY -->
+<div id="keyFrenzyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('keyFrenzyModal')">&times;</span>
+        <h2>Key Frenzy</h2>
+        <p class="modal-sub">Interactive game design & playful systems</p>
+
+        <p>
+            Key Frenzy is a reverse Pac-Man–style typing game that transforms keyboard input into a fast-paced survival challenge.  
+            Players type quickly and accurately to keep advancing ghosts at bay, turning familiar typing mechanics into an experience shaped by rhythm, focus, and pressure.
+        </p>
+
+        <h3>Design Focus</h3>
+        <ul>
+            <li>Real-time keyboard interaction and responsive feedback</li>
+            <li>Balancing challenge and accessibility through pacing</li>
+            <li>Playful tension without punitive failure states</li>
+            <li>Game feel shaped by timing, sound, and visual cues</li>
+        </ul>
+
+        <h3>What This Explores</h3>
+        <p>
+            This project explores how simple mechanics can create engagement and flow, and how play can be used as a space for experimentation, focus, and enjoyment within technical systems.
+        </p>
+
+        <a href="" class="modal-link"> Game Demo →</a>
+    </div>
+</div>
 
 
     <!-- MODAL TEMPLATE — SCOTLAND -->

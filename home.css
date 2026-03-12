@@ -176,6 +176,13 @@ body::before {
   margin-bottom: 0.5rem;
 }
 
+.current-project-title{
+  font-family: 'Playfair Display', serif;
+    font-weight: 300;
+
+}
+
+
 .current-project-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -295,7 +302,7 @@ body::before {
 
 .personas-header p {
   color: #aaa;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .personas {

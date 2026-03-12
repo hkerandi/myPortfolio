@@ -2,7 +2,7 @@
 /* GLOBAL PAGE STYLING */
 /* ---------------------------------------- */
 
-body {
+/* body {
     background-image: url("img/background.png");
     background-size: cover;
     margin: 0;
@@ -10,17 +10,17 @@ body {
     font-family: 'Inter', system-ui, sans-serif;
     color: #E8E8E8;
     letter-spacing: 0.2px;
-}
+} */
 
-section {
+/* section {
     width: 100%;
-}
+} */
 
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
 
-.header {
+/* .header {
     padding: 48px 5% 40px;
     text-align: center;
 }
@@ -73,7 +73,7 @@ section {
 /* SEARCH + FILTERS */
 /* ---------------------------------------- */
 
-.search-section {
+/* .search-section {
     max-width: 900px;
     margin: 20px auto 32px;
     padding: 0 5%;
@@ -95,13 +95,13 @@ section {
     color: white;
     border-radius: 20px;
     border: none;
-}
+} */
 
 /* ---------------------------------------- */
 /* LAB GRID */
 /* ---------------------------------------- */
 
-.grid::before {
+/* .grid::before {
     content: "";
     grid-column: 1 / -1;
     height: 1px;
@@ -122,13 +122,13 @@ section {
     padding: 32px 6vw 60px;
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 /* ---------------------------------------- */
 /* CARDS */
 /* ---------------------------------------- */
 
-.card {
+/* .card {
     background: #161616;
     border: 1px solid #242424;
     border-radius: 14px;
@@ -171,10 +171,10 @@ section {
 
 .small {
     margin-bottom: 10px;
-}
+} */
 
 /* TAGS */
-.tags {
+/* .tags {
     margin-top: auto;
     padding-top: 8px;
 }
@@ -196,12 +196,12 @@ section {
 .tags .visual {
     background: #4b2f88;
     color: #e8ddff;
-}
+} */
 
 /* ---------------------------------------- */
 /* MODALS */
 /* ---------------------------------------- */
-
+/* 
 .modal {
     display: none;
     position: fixed;
@@ -267,4 +267,4 @@ section {
 .modal-link:hover {
     background: #dba853;
 }
-
+ */ 

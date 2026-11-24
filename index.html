@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiness Kerandi — Data Engineer</title>
-    <meta name="description" content="Holiness Kerandi, data engineer. I build data systems, experiences and worlds: F1 telemetry in Nim, privacy-first apps, research and qualitative storytelling.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Space+Mono:wght@400;700&family=Titillium+Web:ital,wght@0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <meta name="description" content="Holiness Kerandi, data engineer. I make messy data trustworthy: validated pipelines for a live platform over 50K+ incarceration records and 670K+ rows of F1 telemetry.">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Space+Mono:wght@400;700&family=Titillium+Web:ital,wght@0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css" />
 </head>
 
-<body>
+<body class="pro">
 
     <a class="skip-link" href="#main">Skip to content</a>
 
@@ -17,13 +17,15 @@
     <nav class="masthead" aria-label="Sections">
         <a href="#top" class="masthead-name">Holiness Kerandi</a>
         <ul class="masthead-links">
+            <li><a href="#field-notes" data-open-notes>Field notes</a></li>
+            <li><a href="#research">Pipelines</a></li>
             <li><a href="#data-in-motion">Data in Motion</a></li>
             <li><a href="#experiences">Builds</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#magazine">Qualitative data</a></li>
-    
+            <li><a href="magazine.html">Stories</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        
+        <!-- Stays visible on phones, where the links above are hidden -->
+        <a href="img/Holiness_Kerandi_Resume.pdf" class="masthead-cta" target="_blank" rel="noopener">Resume</a>
     </nav>
 
     <main id="main">
@@ -49,58 +51,136 @@
     <header class="opening" id="top">
         <div class="wrap opening-grid">
             <div class="opening-text">
-                <p class="section-index">01 — The Opening</p>
-                <h1 class="opening-title">I build data systems, experiences <em>and worlds.</em></h1>
+                <p class="section-index">01 — Data engineer</p>
+                <h1 class="opening-title">I make messy data <em>trustworthy.</em></h1>
                 <p class="opening-lede">
-                    I'm a data engineer. I build pipelines that ingest messy, real-world data,
-                    validate it at the door, model it for the questions people actually ask, and deliver it
-                    where it gets used. Then I shape how it shows up: a race-pace pipeline, a private app,
-                    sharp research or a story told with care. Same data, different outfits.
+                    Real-world data rarely arrives clean. It shows up with phantom columns, laps that
+                    don't add up and cars that aren't even race cars. I build pipelines that look closely,
+                    explain what they find, and only then let the data through.
                 </p>
                 <dl class="opening-meta">
                     <div><dt>Shipped</dt><dd>A live ETL pipeline over 50K+ records, validated every month</dd></div>
-                    <div><dt>Building</dt><dd>Data in Motion: an F1 telemetry pipeline in Nim</dd></div>
-                    <div><dt>Studying</dt><dd>Computer Science &amp; Engineering, Bucknell University, 2027</dd></div>
-                    <div><dt>Open to</dt><dd>Data engineering roles</dd></div>
+                    <div><dt>Building</dt><dd>Data in Motion: an F1 telemetry pipeline in Nim, 670K+ rows</dd></div>
+                    <div><dt>Graduating</dt><dd>Computer Science &amp; Engineering, Bucknell University, January 2027</dd></div>
+                    <div><dt>Open to</dt><dd>Data, analytics and implementation engineering roles</dd></div>
+                    <!-- Confirm this wording with Bucknell's international office, then uncomment:
+                    <div><dt>Authorization</dt><dd>F-1 OPT, eligible for the STEM extension (up to 3 years)</dd></div>
+                    -->
                 </dl>
-                <!-- <div class="cta-row">
-                    <a href="#data-in-motion" class="btn btn-solid">See the work</a>
-                    <a href="img/Holiness_Kerandi_Resume.pdf" class="btn btn-line" target="_blank" rel="noopener">Download CV</a>
+                <div class="cta-row">
+                    <a href="#field-notes" class="btn btn-solid" data-open-notes>Read my field notes</a>
+                    <a href="img/Holiness_Kerandi_Resume.pdf" class="btn btn-line" target="_blank" rel="noopener">Download Resume</a>
                     <a href="https://github.com/hkerandi" class="btn btn-line" target="_blank" rel="noopener">GitHub</a>
-                </div> -->
+                    <a href="LINKEDIN_URL" class="btn btn-line" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
             </div>
 
             <figure class="opening-portrait">
-                <img src="img/avatars/data_front.png" alt="Holiness Kerandi">
-                <figcaption>Hi, I'm Holiness 👋🏾 .</figcaption>
+                <img src="img/me.jpeg" alt="Holiness Kerandi">
+                <figcaption>Hi, I'm Holiness 👋🏾</figcaption>
             </figure>
         </div>
     </header>
 
 
-    <!-- ================= 02 DATA IN MOTION (flagship) ================= -->
+    <!-- ================= 02 PIPELINES IN PRODUCTION ================= -->
+    <section class="section research" id="research">
+        <div class="wrap">
+            <p class="section-index">02 — Pipelines in production</p>
+            <h2 class="section-title">Data with real stakes</h2>
+
+            <article class="platform">
+                <img src="img/carceral.png" alt="The Mapping PA Prisons platform: a map of Pennsylvania's prisons built from monthly incarceration data." loading="lazy">
+                <div class="platform-text">
+                    <p class="status">Live · Client project · Data engineering lead</p>
+                    <h3 class="paper-title platform-title">Mapping PA Prisons</h3>
+                    <p class="platform-lede">Pennsylvania's prison system, mapped from 50K+ incarceration records across six monthly datasets.</p>
+                    <dl class="casefile">
+                        <div><dt>Role</dt><dd>Lead data engineer and Scrum Master, team of 5</dd></div>
+                        <div><dt>Stack</dt><dd>Python, Pandas, PostgreSQL, React, ArcGIS</dd></div>
+                        <div><dt>Data problem</dt><dd>Six monthly files that quietly changed shape</dd></div>
+                        <div><dt>Outcome</dt><dd>Live platform, every release validated before production</dd></div>
+                    </dl>
+                    <dl class="abstract">
+                        <div><dt>Data</dt><dd>Six monthly datasets integrating population, geographic and security-level data.</dd></div>
+                        <div><dt>Pipeline</dt><dd>I designed and maintain the ETL pipeline. I diagnosed schema drift, type mismatches, phantom columns and whitespace errors, then built ingestion validation that checks each monthly dataset independently, so problems are caught before they reach the app.</dd></div>
+                        <div><dt>Delivery</dt><dd>Cleaned data flows to the application automatically, with month-specific data lazy-loaded for speed.</dd></div>
+                        <!-- If true, add it: it shows you know how to handle regulated data.
+                        <div><dt>Handling</dt><dd>Raw records are sensitive, so they are processed locally, never stored in the cloud.</dd></div>
+                        -->
+                        <div><dt>Team</dt><dd>I led a team of five as Scrum Master and main client contact, turning requests into data requirements.</dd></div>
+                    </dl>
+                    <p class="tech-line">PostgreSQL · Python · Pandas · ArcGIS · React · Git</p>
+                    <a class="paper-link" href="https://carceral.netlify.app/" target="_blank" rel="noopener">Visit the platform →</a>
+                </div>
+            </article>
+
+            <div class="papers">
+                <article class="paper">
+                    <p class="status">Research pipeline · Published online, Bucknell University</p>
+                    <h3 class="paper-title">Carceral Algorithms: How Misconducts Affect Parole Outcomes in Pennsylvania</h3>
+                    <dl class="abstract">
+                        <div><dt>Question</dt><dd>How do misconducts factor into parole outcomes?</dd></div>
+                        <div><dt>Method</dt><dd>An end-to-end Python pipeline over 10,000+ Pennsylvania Department of Corrections misconduct records, with reproducible cleaning, validation and analysis.</dd></div>
+                        <div><dt>Finding</dt><dd>Treating misconducts as a single factor hides most of the story; their types, patterns and relationships tell it.</dd></div>
+                    </dl>
+                    <p class="tech-line">Python · Pandas · Jupyter</p>
+                    <a class="paper-link" href="https://carceral.netlify.app/research/misconducts" target="_blank" rel="noopener">Read the research →</a>
+                </article>
+
+                <article class="paper">
+                    <p class="status">1st Place · Best in Show, data challenge</p>
+                    <h3 class="paper-title">Cultural Diffusion in Global Music: The Billboard Hot 100</h3>
+                    <dl class="abstract">
+                        <div><dt>Question</dt><dd>What can 50+ years of Billboard Hot 100 data say about how popular music changes?</dd></div>
+                        <div><dt>Method</dt><dd>A reproducible pipeline over 152K+ chart records, integrating linguistic, categorical and geographic data. I normalised decades of inconsistent historical data (type mismatches, whitespace, edge cases) and designed an analytical model for comparing eras.</dd></div>
+                        <div><dt>Result</dt><dd>Lyrical themes and sentiment compared across decades; awarded 1st Place and Best in Show.</dd></div>
+                    </dl>
+                    <p class="tech-line">Python · Pandas · Jupyter</p>
+                    <!-- Add the repo link once it's public:
+                    <a class="paper-link" href="BILLBOARD_REPO_URL" target="_blank" rel="noopener">View the code →</a>
+                    -->
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 03 DATA IN MOTION ================= -->
     <section class="section motion" id="data-in-motion">
         <div class="wrap">
-            <p class="section-index">02 — Featured project</p>
+            <p class="section-index">03 — In progress, built in public</p>
 
             <article class="feature">
-            <video class="feature-video" autoplay muted loop playsinline preload="metadata"
-                aria-label="The Nim lap viewer replaying a fastest lap at Monza, with a speed-coloured trail">
-            <source src="img/f1debut.mp4" type="video/mp4">
-            </video>
-
+                <!-- Title and summary on the left, the lap-viewer video on the right (stacked on phones) -->
+                <div class="feature-top">
                 <div class="feature-head">
-                    <p class="feature-tags">F1 · Data visualisation · Games · XR</p>
+                    <p class="feature-tags">Time-series pipeline · Data quality · F1 telemetry</p>
                     <h2 class="motion-title">Data in Motion</h2>
                     <p class="feature-lede">
-                        Exploring how data can move beyond the dashboard and become something you can see,
-                        interact with and experience, built on a pipeline for real Formula 1 telemetry.
+                        A pipeline for 670K+ rows of real Formula 1 telemetry from the 2022 Italian Grand Prix,
+                        built to catch bad data early, then turn the clean data into something you can see and replay.
                     </p>
+                    <dl class="casefile casefile--motion">
+                        <div><dt>Role</dt><dd>Solo: design, build, document</dd></div>
+                        <div><dt>Stack</dt><dd>Python, FastF1, Nim, PostgreSQL, TimescaleDB, Docker</dd></div>
+                        <div><dt>Data problem</dt><dd>Gaps, duplicates, missing laps and non-race cars</dd></div>
+                        <div><dt>Outcome so far</dt><dd>Working lap viewer that flags bad data; database load next</dd></div>
+                    </dl>
+                </div>
+
+                <figure class="feature-media">
+                    <video class="feature-video" autoplay muted loop playsinline preload="metadata"
+                        aria-label="The Nim lap viewer replaying a fastest lap at Monza, with a speed-coloured trail">
+                        <source src="img/f1debut.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>The Nim lap viewer replaying a fastest lap at Monza. Gaps over two seconds are flagged on screen.</figcaption>
+                </figure>
                 </div>
 
                 <div class="question">
                     <span class="question-label">The real question</span>
-                    <p>What does it take to turn data into a reliable, responsive, interactive experience?</p>
+                    <p>What does it take to make high-frequency data reliable enough to build on?</p>
                 </div>
 
                 <div class="feature-body">
@@ -111,19 +191,19 @@
                         </div>
                         <div>
                             <dt>The system</dt>
-                            <dd>Python and FastF1 extract each session and normalise every time column to plain seconds, so nothing downstream has to parse durations. Nim does the heavy lifting (ingestion, validation, resampling) because it's compiled and fast. Results land in PostgreSQL with TimescaleDB, a time-series database, running in Docker so anyone can reproduce the stack with one command. Flags, a desktop lap viewer and a WebXR ride-along all read from the same cleaned data.</dd>
+                            <dd>Python and FastF1 extract each session and normalise every time column to plain seconds, so nothing downstream has to parse durations. Nim does the heavy lifting (ingestion, validation, resampling) because it's compiled and fast. PostgreSQL with TimescaleDB, a time-series database, runs in Docker so anyone can reproduce the stack with one command; loading the cleaned data into it is the current step. Flags, a desktop lap viewer and a WebXR ride-along will all read from the same cleaned data.</dd>
                         </div>
                         <div>
                             <dt>The execution</dt>
-                            <dd>The Nim lap viewer reads only the rows it needs, drops incomplete ones, sorts and de-duplicates timestamps, then interpolates between samples to replay any driver's fastest lap of the 2022 Italian Grand Prix at true speed. Laps with gaps over two seconds are flagged on screen: bad data is shown, not hidden. When F1 locked its public timing archive in October 2026, I switched sources, documented the change, and kept the project moving.</dd>
+                            <dd>The Nim lap viewer reads only the rows it needs, drops incomplete ones, sorts and de-duplicates timestamps, then interpolates between samples to replay any driver's fastest lap at true speed. Laps with gaps over two seconds are flagged on screen: bad data is shown, not hidden. When F1 locked its public timing archive in October 2026, I switched sources, documented the change, and kept the project moving.</dd>
                         </div>
                         <div>
                             <dt>The evidence</dt>
-                            <dd>The repository, with a log of every data problem found so far: a source lockout, non-race vehicles in the position feed, 89 "missing" laps explained by retirements, uneven sampling, and no heading data, each with how it's handled.</dd>
+                            <dd>The repository, with a log of every data problem found so far: a source lockout, non-race vehicles (cars 241–243) in the position feed, 89 "missing" laps explained by retirements, uneven sampling, and no heading data, each with how it's handled.</dd>
                         </div>
                         <div>
                             <dt>The next step</dt>
-                            <dd>A data-quality report, resampling onto a distance grid, automatic flags, then <em>Ride as Verstappen, see the data</em>: a WebXR lap that reveals the raw samples, the cleaning and the flags on track.</dd>
+                            <dd>Load and validate the data in TimescaleDB, add tests and CI, then automated data-quality checks and flags. After that: <em>Ride as Verstappen, see the data</em>, a WebXR lap that reveals the raw samples, the cleaning and the flags on track.</dd>
                         </div>
                     </dl>
 
@@ -131,11 +211,12 @@
                         <p class="tower-title">Race progress</p>
                         <ol>
                             <li class="done"><span class="pos">1</span><span class="code">EXPORT</span><span class="gap">DONE</span></li>
-                            <li class="done"><span class="pos">2</span><span class="code">DATABASE</span><span class="gap">DONE</span></li>
-                            <li class="done"><span class="pos">3</span><span class="code">LAP VIEWER</span><span class="gap">DONE</span></li>
-                            <li class="next"><span class="pos">4</span><span class="code">VALIDATION</span><span class="gap">NEXT</span></li>
-                            <li><span class="pos">5</span><span class="code">FLAGS</span><span class="gap">—</span></li>
-                            <li><span class="pos">6</span><span class="code">WEBXR</span><span class="gap">—</span></li>
+                            <li class="done"><span class="pos">2</span><span class="code">LAP VIEWER</span><span class="gap">DONE</span></li>
+                            <li class="done"><span class="pos">3</span><span class="code">DB STACK</span><span class="gap">DONE</span></li>
+                            <li class="next"><span class="pos">4</span><span class="code">DB LOAD</span><span class="gap">NEXT</span></li>
+                            <li><span class="pos">5</span><span class="code">TESTS + CI</span><span class="gap">—</span></li>
+                            <li><span class="pos">6</span><span class="code">QUALITY FLAGS</span><span class="gap">—</span></li>
+                            <li><span class="pos">7</span><span class="code">WEBXR</span><span class="gap">—</span></li>
                         </ol>
                         <p class="tower-channels">Nim · Python · FastF1 · PostgreSQL · TimescaleDB · Docker · raylib</p>
                     </aside>
@@ -149,58 +230,71 @@
     </section>
 
 
-    <!-- ================= 03 DIGITAL EXPERIENCES ================= -->
+    <!-- ================= 04 BUILDS ================= -->
     <section class="section experiences" id="experiences">
         <div class="wrap">
-            <p class="section-index">03 — Digital experiences</p>
-            <h2 class="section-title">Builds</h2>
+            <p class="section-index">04 — Builds</p>
+            <h2 class="section-title">Things I've shipped</h2>
 
             <article class="babe">
-                <div class="babe-gallery">
-                    <img src ="img/babe.png">
-                    <!-- <div class="media-placeholder media-placeholder--tall" role="img" aria-label="Placeholder for a candid photograph">
-                        <span class="media-placeholder__index">03 / A</span>
-                        <span class="media-placeholder__label">Candid photo: sisterhood, women being women</span>
-                    </div>
-                    <div class="media-placeholder" role="img" aria-label="Placeholder for an app screenshot">
-                        <span class="media-placeholder__index">03 / B</span>
-                        <span class="media-placeholder__label">Babe! app screenshot</span>
-                    </div>
-                    <div class="media-placeholder" role="img" aria-label="Placeholder for a moodboard image">
-                        <span class="media-placeholder__index">03 / C</span>
-                        <span class="media-placeholder__label">Moodboard or detail shot</span>
-                    </div> -->
+                <!-- Screenshots: retake these with demo data (made-up name, entries and photos), then save them as:
+                     img/babe-home.png, img/babe-cycles.png, img/babe-doctor.png -->
+                <div class="babe-gallery babe-gallery--phones">
+                    <img src="img/lockscreen_babe.jpeg"
+                         alt="babe! lockscreen"
+                         loading="lazy">
+                    <img src="img/babe_cycles.jpeg"
+                         alt="My cycles: a month calendar marking bleeding, sick days and diary days, with a cycle history strip for each cycle."
+                         loading="lazy">
+                    <img src="img/sicklog_babe.jpeg"
+                         alt="Send to your doctor: choose a month, six months or the year so far, and preview the one message that will be sent."
+                         loading="lazy">
+                         <img src="img/home_babe.jpeg"
+                         alt="babe! home screen: a daily affirmation, recent days with the song of the day, and the diary, go-to's, cycles and sick log."
+                         loading="lazy">
+                    <img src="img/goto_babe.jpeg"
+                         loading="lazy">
+                    <img src="img/sealed_babe.jpeg"
+                         loading="lazy">
                 </div>
 
                 <div class="babe-text">
-                    <p class="status">In testing · iOS (TestFlight) and Android</p>
-                    <h3 class="babe-title">Babe!</h3>
+                    <p class="status">In testing · iOS (TestFlight) and Android · Since March 2026</p>
+                    <h3 class="babe-title">babe!</h3>
                     <p class="babe-lede">
-                        A privacy-first health diary designed around the realities of Black women's health experiences:
-                        a private, unhurried place to understand your body over time.
+                        A private diary for the days you're fine, and the ones you're not. It began as a way to log
+                        your health and grew into a way to reach your people sooner.
                     </p>
+                    <dl class="casefile">
+                        <div><dt>Role</dt><dd>Solo: design, build, testing</dd></div>
+                        <div><dt>Stack</dt><dd>React Native, Expo, SQLite</dd></div>
+                        <div><dt>Data problem</dt><dd>Health data that must never leave the phone, and never be lost</dd></div>
+                        <div><dt>Outcome so far</dt><dd>In beta with 14 testers, 8 on iOS and 6 on Android</dd></div>
+                    </dl>
                     <dl class="layers layers--compact">
                         <div>
                             <dt>The problem</dt>
-                            <dd>The small details of our health get lost between appointments, and too often our own experiences get talked over.</dd>
+                            <dd>You stay busy. You say you're fine. You go quiet. The people who love you can tell something's up; they just don't know how to reach in.</dd>
                         </div>
                         <div>
-                            <dt>The system</dt>
-                            <dd>A deliberate architecture choice: local-first. Everything lives on the device in SQLite, with no server, no account and no central store to breach. Privacy is a design constraint, not a setting. Your health data belongs to you.</dd>
+                            <dt>What it does today</dt>
+                            <dd>A daily diary for body feelings, wins, a photo and the song you had on repeat. A cycle calendar with a history strip for every cycle. A searchable sick log that turns a month, six months or the year so far into one message for your doctor. Go-to's for the hard days (remedies, recipes, products, places and people), sealed days that stay yours, and a face or fingerprint lock.</dd>
                         </div>
                         <div>
-                            <dt>The execution</dt>
-                            <dd>A React Native app for journaling, cycle tracking, mood and body observations, symptoms, sick days and personal remedies.</dd>
+                            <dt>The data design</dt>
+                            <dd>Local-first: everything lives on the device in SQLite, with no server, no account and no central store to breach. A normalised schema with idempotent upserts and additive, re-runnable migrations, so updates never lose entries. Cycles are derived from the days logged, not stored, keeping one source of truth.</dd>
                         </div>
                         <div>
-                            <dt>The next step</dt>
-                            <dd>Wider testing, and listening closely to the women using it.</dd>
+                            <dt>The trade-off</dt>
+                            <dd>No server means nothing to breach, but also no sync and no cloud backup. Encrypted local backup and restore is next, so privacy never costs anyone their history.</dd>
+                        </div>
+                        <div>
+                            <dt>Where it's going</dt>
+                            <dd>A gentle nudge when you've gone quiet, a one-tap "I need company" text, and a short note for your people on how to show up. It never diagnoses or predicts anything.</dd>
                         </div>
                     </dl>
-                    <p class="tech-line">React Native · Expo · JavaScript · SQLite · iOS / TestFlight · Android SDK</p>
-                    <div class="cta-row">
-                        <a href="img/babe.png" class="btn btn-babe" target="_blank" rel="noopener">See a preview →</a>
-                    </div>
+                    <p class="tech-line">React Native · Expo · JavaScript · SQLite · Local notifications · Biometric authentication</p>
+                
                 </div>
             </article>
 
@@ -216,122 +310,153 @@
                     <p class="status">Team project · Java</p>
                     <h3 class="mini-title">Key Frenzy</h3>
                     <p>A reverse Pac-Man typing game: type fast and accurately to hold off advancing ghosts. Built by a team working in Agile sprints with Scrum.</p>
-                    <a href="img/keyfrenzy_demo.mp4" target="_blank" rel="noopener">Watch the demo →</a>
+                    <video class="mini-video" controls playsinline preload="metadata"
+                        aria-label="Key Frenzy gameplay demo">
+                        <!-- #t=0.5 shows a frame from the game instead of a black box before it plays -->
+                        <source src="img/keyfrenzy_demo.mp4#t=0.5" type="video/mp4">
+                    </video>
+                    <a href="img/keyfrenzy_demo.mp4" target="_blank" rel="noopener">Open full size →</a>
                 </article>
             </div>
         </div>
     </section>
 
 
-    <!-- ================= 04 RESEARCH ================= -->
-    <section class="section research" id="research">
-        <div class="wrap">
-            <p class="section-index">04 — Research</p>
-            <h2 class="section-title">Research, with presence</h2>
-
-            <article class="platform">
-                <img src="img/carceral.png">
-                <!-- <div class="media-placeholder media-placeholder--map" role="img" aria-label="Placeholder for a screenshot of the Mapping PA Prisons map">
-                    <span class="media-placeholder__index">04 / Platform</span>
-                    <span class="media-placeholder__label">Screenshot of the live map</span>
-                </div> -->
-                <div class="platform-text">
-                    <p class="status">Live · Full-stack geospatial platform</p>
-                    <h3 class="paper-title platform-title">Mapping PA Prisons</h3>
-                    <p class="platform-lede">The platform behind my carceral research: Pennsylvania's prison system, mapped from 50K+ incarceration records.</p>
-                    <dl class="abstract">
-                        <div><dt>Data</dt><dd>Six monthly datasets integrating population, geographic and security-level data.</dd></div>
-                        <div><dt>Pipeline</dt><dd>I designed and maintain the ETL pipeline. I diagnosed schema drift, type mismatches, phantom columns and whitespace errors, then built ingestion validation that checks each monthly dataset independently, so problems are caught before they reach the app.</dd></div>
-                        <div><dt>Delivery</dt><dd>Cleaned data flows to the application automatically, with month-specific data lazy-loaded for speed.</dd></div>
-                    </dl>
-                    <p class="tech-line">PostgreSQL · Python · Pandas · ArcGIS · React · Git</p>
-                    <a class="paper-link" href="https://carceral.netlify.app/" target="_blank" rel="noopener">Visit the platform →</a>
-                </div>
-            </article>
-
-            <div class="papers">
-                <article class="paper">
-                    <!-- <img src="img/carceral.png"> -->
-                    <!-- <div class="media-placeholder media-placeholder--cover" role="img" aria-label="Placeholder for a research cover or diagram">
-                        <span class="media-placeholder__index">04 / I</span>
-                        <span class="media-placeholder__label">Research cover or key diagram</span>
-                    </div> -->
-                    <p class="status">Published online · Bucknell University</p>
-                    <h3 class="paper-title">Carceral Algorithms: How Misconducts Affect Parole Outcomes in Pennsylvania</h3>
-                    <dl class="abstract">
-                        <div><dt>Question</dt><dd>How do misconducts factor into parole outcomes?</dd></div>
-                        <div><dt>Method</dt><dd>An end-to-end Python pipeline over 10,000+ Pennsylvania Department of Corrections misconduct records, with reproducible cleaning, validation and analysis.</dd></div>
-                        <div><dt>Finding</dt><dd>Treating misconducts as a single factor hides most of the story; their types, patterns and relationships tell it.</dd></div>
-                    </dl>
-                    <p class="tech-line">Python · Pandas · Jupyter</p>
-                    <a class="paper-link" href="https://carceral.netlify.app/research/misconducts" target="_blank" rel="noopener">Read the research →</a>
-                </article>
-
-                <article class="paper">
-                    <!-- <div class="media-placeholder media-placeholder--cover" role="img" aria-label="Placeholder for a chart from the Billboard project">
-                        <span class="media-placeholder__index">04 / II</span>
-                        <span class="media-placeholder__label">Chart: themes across the decades</span>
-                    </div> -->
-                    <p class="status">1st Place · Best in Show, data challenge</p>
-                    <h3 class="paper-title">Cultural Diffusion in Global Music: The Billboard Hot 100</h3>
-                    <dl class="abstract">
-                        <div><dt>Question</dt><dd>What can 50+ years of Billboard Hot 100 data say about how popular music changes?</dd></div>
-                        <div><dt>Method</dt><dd>A reproducible pipeline over 152K+ chart records, integrating linguistic, categorical and geographic data. I normalised decades of inconsistent historical data (type mismatches, whitespace, edge cases) and designed an analytical model for comparing eras.</dd></div>
-                        <div><dt>Result</dt><dd>Lyrical themes and sentiment compared across decades; awarded 1st Place and Best in Show.</dd></div>
-                    </dl>
-                    <p class="tech-line">Python · Pandas · Jupyter</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ================= 05 THE MAGAZINE (qualitative) ================= -->
-    <section class="section magazine" id="magazine">
+    <!-- ================= 05 STORIES: teaser (the full magazine lives on magazine.html) ================= -->
+    <!-- <section class="section magazine magazine--teaser" id="magazine">
         <div class="wrap">
             <div class="mag-masthead">
-                <p class="section-index">05 — Qualitative data</p>
-                <p class="mag-issue">Issue 01 · Stories</p>
+                <p class="section-index">05 — Stories</p>
+                <p class="mag-issue">Issue 01 · Qualitative data</p>
             </div>
-            <h2 class="mag-title">The Magazine</h2>
+            <h2 class="mag-title">Routes &amp; Rhythms</h2>
+            <p class="teaser-lede">
+                Not all data comes in rows. Some of it is photographs, voices and family stories.
+                My magazine holds that work: a digital exhibit on Black joy and Edinburgh's untold
+                history, with Tiny Travellers and Abagusii in Motion coming next.
+            </p>
+            <a class="btn btn-solid" href="magazine.html">Read the magazine →</a>
+        </div>
+    </section> -->
 
-            <article class="spread">
-                <img class="spread-photo" src="img/joy.png" alt="Photograph from the Black Joy exhibit">
-                <div class="spread-text">
-                    <p class="status">Griot Institute for Black Lives &amp; Cultures · Digital exhibit</p>
-                    <h3 class="spread-title">Black Joy</h3>
-                    <p class="dropcap">
-                        A digital exhibit I created on Black joy, held alongside pain rather than in place of it. I curated
-                        reflective essays, definitions, voices and photography, from joy in sport and performance to archival
-                        images of 1940s Harlem, and shaped a semester of research into a public space anyone can explore.
-                    </p>
-                    <blockquote class="pull-quote">Joy as healing, resistance and regeneration.</blockquote>
-                    <p class="method"><span>Method</span> Archival research · curation · editorial writing</p>
-                    <a class="mag-link" href="https://sites.google.com/bucknell.edu/blackjoy" target="_blank" rel="noopener">Visit the exhibit →</a>
-                </div>
-            </article>
 
-            <article class="brief">
-                <p class="status">Consultant · Demo site</p>
-                <h3 class="brief-title">Addressing Slavery and Colonialism in Scotland</h3>
-                <p>
-                    A demo for an accessible, sustainable digital space sharing untold stories of Scotland's role in the
-                    transatlantic slave trade: a digital walking map of Edinburgh's historic sites, and a space for
-                    community members to share their own family stories. I consulted on the project.
-                </p>
-                <p class="method"><span>Method</span> Public history · digital mapping · community storytelling</p>
-                <a class="mag-link" href="https://sites.google.com/bucknell.edu/addressing-slavery-and-colonia" target="_blank" rel="noopener">View the demo →</a>
-            </article>
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <p class="section-index">Finish line — Contact</p>
+            <h2 class="contact-title">Hiring for data engineering?</h2>
+            <p class="contact-lede">
+                I graduate in January 2027 and I'm looking for data, analytics and implementation engineering roles.
+                If your data is messy, even better. That's my favourite kind.
+            </p>
+            <div class="cta-row">
+                <a href="mailto:holinesskerandi@gmail.com" class="btn btn-solid">Email me</a>
+                <a href="img/Holiness_Kerandi_Resume.pdf" class="btn btn-line" target="_blank" rel="noopener">Download Resume</a>
+                <a href="Lhttps://www.linkedin.com/in/holiness-kerandi/" class="btn btn-line" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/hkerandi" class="btn btn-line" target="_blank" rel="noopener">GitHub</a>
+            </div>
         </div>
     </section>
 
-   
+    <!-- ================= FIELD NOTES: a pop-up, opened by the "Read my field notes" button
+         and the menu link (site.js). Not part of the page flow. ================= -->
+    <dialog class="notes-dialog" id="field-notes" aria-labelledby="field-notes-title">
+        <div class="notes-closebar">
+            <button type="button" class="notes-close" data-close-notes aria-label="Close field notes">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+        <div class="notes-head">
+            <div>
+                <p class="section-index">Field notes</p>
+                <h2 class="section-title" id="field-notes-title">What the data showed me</h2>
+                <p class="section-lede">Most data isn't wrong. It just hasn't been seen from a different angle yet.
+                Here's what each dataset showed me once I looked again, and what I did about it.</p>
+            </div>
+        </div>
+        <ul class="notes-grid">
+                <li class="note-card">
+                    <a class="note-project" href="#research">PA Prisons</a>
+                    <p class="note-noticed">Monthly files stopped matching each other</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Schema drift between releases: renamed, missing and unexpected columns</dd></div>
+                        <div><dt>How I handled it</dt><dd>Validation that checks each month on its own before it reaches production</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#research">PA Prisons</a>
+                    <p class="note-noticed">Columns that shouldn't exist, values that wouldn't match</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Phantom columns, type mismatches and stray whitespace</dd></div>
+                        <div><dt>How I handled it</dt><dd>Caught and cleaned at ingestion, so the app never sees them</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#data-in-motion">F1 telemetry</a>
+                    <p class="note-noticed">971 laps where 1,060 were expected</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>The 89 "missing" laps belonged to drivers who retired</dd></div>
+                        <div><dt>How I handled it</dt><dd>Logged with the cause, never filled in with made-up laps</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#data-in-motion">F1 telemetry</a>
+                    <p class="note-noticed">Cars 241, 242 and 243 in the position feed</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Non-race vehicles sharing the feed</dd></div>
+                        <div><dt>How I handled it</dt><dd>Excluded by a written rule, so the choice can be checked</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#data-in-motion">F1 telemetry</a>
+                    <p class="note-noticed">Gaps over two seconds, repeated timestamps</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Uneven sampling and duplicate rows</dd></div>
+                        <div><dt>How I handled it</dt><dd>Duplicates removed; gaps flagged on screen instead of smoothed over</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#data-in-motion">F1 telemetry</a>
+                    <p class="note-noticed">The source went dark</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>F1 locked its public timing archive in October 2026</dd></div>
+                        <div><dt>How I handled it</dt><dd>Switched sources and documented why</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#research">Billboard Hot 100</a>
+                    <p class="note-noticed">50+ years of records that didn't agree</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Decades of inconsistent types, whitespace and edge cases</dd></div>
+                        <div><dt>How I handled it</dt><dd>Normalised into one reproducible pipeline over 152K+ records</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <span class="note-project">Orientation planning</span>
+                    <p class="note-noticed">The same people, counted twice</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>90+ people spread across 6 spreadsheets</dd></div>
+                        <div><dt>How I handled it</dt><dd>Python scripts to de-duplicate and reconcile; planning time down 40%</dd></div>
+                    </dl>
+                </li>
+                <li class="note-card">
+                    <a class="note-project" href="#experiences">babe!</a>
+                    <p class="note-noticed">Cycle history that could drift from what was logged</p>
+                    <dl>
+                        <div><dt>What was really going on</dt><dd>Storing the same fact twice</dd></div>
+                        <div><dt>How I handled it</dt><dd>Derived from daily entries instead: one source of truth</dd></div>
+                    </dl>
+                </li>
+        </ul>
+    </dialog>
+
+
     </main>
 
     <footer class="footer">
         <div class="wrap footer-inner">
             <p>&copy; 2026 Holiness Kerandi</p>
-            <!-- Photo credits: <p class="credits">Photos: <a href="...">Name</a> (Unsplash) · <a href="...">Name</a> (Pexels)</p> -->
+            <p><a href="https://github.com/hkerandi" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/holiness-kerandi/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:holinesskerandi@gmail.com">Email</a></p>
         </div>
     </footer>
 

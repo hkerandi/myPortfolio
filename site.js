@@ -9,7 +9,9 @@
 (function () {
   // ---------- 1. Active section in the nav ----------
   const links = Array.from(document.querySelectorAll(".masthead-links a"));
+  // Only same-page section links ("#id") can be highlighted; pop-up links and other pages are skipped
   const navSections = links
+    .filter(function (a) { return a.getAttribute("href").charAt(0) === "#" && !a.hasAttribute("data-open-notes"); })
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
 
@@ -33,10 +35,11 @@
 
   // Each section's outfit: the colour the car wears there, and its checkpoint label
   const OUTFITS = {
+    // Listed in page order, so the checkpoint numbers match the section numbers
     "top":            { colour: "#c9a24a", label: "01" },
-    "data-in-motion": { colour: "#ff7a00", label: "02" },
-    "experiences":    { colour: "#e8a0b8", label: "03" },
-    "research":       { colour: "#3aa88f", label: "04" },
+    "research":       { colour: "#3aa88f", label: "02" },
+    "data-in-motion": { colour: "#ff7a00", label: "03" },
+    "experiences":    { colour: "#e8a0b8", label: "04" },
     "magazine":       { colour: "#f3ead9", label: "05" },
     "engineering":    { colour: "#c9a24a", label: "06" },
     "about":          { colour: "#ff9a3c", label: "✦" },
@@ -123,4 +126,57 @@
   window.addEventListener("resize", layout);
   window.addEventListener("load", layout);          // fonts and images change section positions
   if (wide.addEventListener) wide.addEventListener("change", layout);
+})();
+
+/*
+  3. Field notes pop-up: opened by any [data-open-notes] link or button, or by arriving at
+     index.html#field-notes (the magazine's menu links there). Closes with the X, Escape,
+     a click outside the card, or a link inside it that jumps to a section.
+*/
+(function () {
+  const dialog = document.getElementById("field-notes");
+  if (!dialog || typeof dialog.showModal !== "function") return;   // very old browsers just scroll to it
+
+  let opener = null;
+
+  function open(trigger) {
+    opener = trigger || null;
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+    if (history.replaceState) history.replaceState(null, "", "#field-notes");
+  }
+
+  function close() {
+    if (dialog.open) dialog.close();
+  }
+
+  dialog.addEventListener("close", function () {
+    if (location.hash === "#field-notes" && history.replaceState) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    if (opener && opener.focus) opener.focus();        // back to where the reader was
+  });
+
+  document.querySelectorAll("[data-open-notes]").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      open(el);
+    });
+  });
+
+  dialog.querySelectorAll("[data-close-notes]").forEach(function (el) {
+    el.addEventListener("click", close);
+  });
+
+  // a click on the dimmed backdrop (outside the card) closes it
+  dialog.addEventListener("click", function (e) {
+    if (e.target === dialog) close();
+  });
+
+  // links inside that jump to a section: close first, then let the page scroll there
+  dialog.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function () { opener = null; close(); });
+  });
+
+  if (location.hash === "#field-notes") open(null);
 })();

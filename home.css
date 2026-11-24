@@ -1400,3 +1400,782 @@ main { position: relative; }
   .platform { grid-template-columns: 1fr; gap: 2rem; }
   .engineering > .wrap > .media-placeholder--diagram { aspect-ratio: 4 / 3; }
 }
+/* =========================================================
+   DATA PROBLEMS I'VE FOUND (the signature section)
+   ========================================================= */
+.problems {
+  background:
+    radial-gradient(900px 420px at 85% 0%, rgba(201, 162, 74, 0.08), transparent 70%),
+    var(--ink);
+}
+
+.problems .section-lede { margin-top: -1.5rem; }
+
+.problems-scroll {
+  overflow-x: auto;
+  border-radius: 22px;
+  background: var(--ink-2);
+}
+
+.problems-table {
+  width: 100%;
+  min-width: 760px;               /* scrolls sideways on phones instead of squashing */
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.problems-table th {
+  text-align: left;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass);
+  padding: 1.1rem 1.25rem 0.9rem;
+  border-bottom: 1px solid var(--ink-3);
+}
+
+.problems-table td {
+  padding: 1rem 1.25rem;
+  vertical-align: top;
+  color: #ddd1bf;
+  border-bottom: 1px solid var(--ink-3);
+}
+
+.problems-table tbody tr:last-child td { border-bottom: none; }
+
+.problems-table td:first-child {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.problems-table td:first-child a { color: var(--brass); }
+.problems-table td:last-child { color: var(--text); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CASE FILE: role / stack / data problem / outcome
+   ========================================================= */
+.casefile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0 0 1.75rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(58, 168, 143, 0.08);
+}
+
+.casefile dt {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--research);
+}
+
+.casefile dd { margin: 0.2rem 0 0; font-size: 0.92rem; color: var(--text); }
+
+.casefile--motion { margin-top: 1.75rem; background: rgba(255, 122, 0, 0.08); }
+.casefile--motion dt { color: var(--motion); }
+
+@media (max-width: 560px) {
+  .casefile { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   THE MAGAZINE: homepage teaser + its own page
+   ========================================================= */
+.teaser-lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  margin: -1.5rem 0 2rem;
+  color: #3d3229;
+}
+
+/* On the paper background the default solid button would vanish */
+.magazine .btn-solid { background: var(--paper-ink); color: var(--paper); }
+
+.magazine--teaser .mag-title { font-size: clamp(3rem, 8vw, 6rem); }
+
+/* Its own page: room under the nav, then the paper page */
+.back-row { padding: 2.5rem 0 0; }
+
+.back-link {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.magazine-page .magazine { margin-top: 1.5rem; }
+
+/* Smaller screens: clear the road strip under the nav */
+@media (max-width: 1359px) {
+  .back-row { padding-top: 4.5rem; }
+}
+
+
+/* =========================================================
+   HOMEPAGE THEME (body.pro): confident, friendly fintech
+   Big tight headlines, white space, soft grey panels with large
+   rounded corners, black pill buttons, pastel tiles, a little gradient.
+   Part of home.css, but every rule is scoped to body.pro (the homepage),
+   so the magazine page is untouched; the teaser keeps its paper look on purpose.
+   ========================================================= */
+
+.pro {
+  --ink: #ffffff;          /* page */
+  --ink-2: #f4f4f6;        /* soft grey panels */
+  --ink-3: #ececef;        /* lines */
+  --text: #191c1f;
+  --muted: #5f6368;
+  --brass: #0666eb;        /* accent: one confident blue */
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+
+  --blue-dark: #0550bd;
+  --tint-blue: #eaf2ff;
+  --tint-violet: #f1ecff;
+  --tint-green: #e7f7ee;
+  --tint-peach: #fff1e3;
+  --black: #191c1f;
+
+  background: #ffffff;
+  color: var(--text);
+}
+
+.pro a { color: var(--brass); }
+.pro a:hover { color: var(--blue-dark); }
+.pro a:focus-visible, .pro button:focus-visible { outline-color: var(--brass); }
+
+/* ---------- Headlines: big, bold, tight ---------- */
+.pro .opening-title,
+.pro .section-title,
+.pro .paper-title,
+.pro .babe-title,
+.pro .mini-title,
+.pro .motion-title,
+.pro .contact-title,
+.pro .masthead-name {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  color: var(--text);
+}
+
+.pro .opening-title { font-size: clamp(2.8rem, 6.6vw, 5.6rem); line-height: 0.98; }
+.pro .opening-title em { font-style: normal; font-weight: 700; color: var(--brass); }
+.pro .section-title { font-size: clamp(2.2rem, 4.4vw, 3.6rem); line-height: 1; max-width: 18ch; }
+.pro .research .section-title { font-style: normal; font-weight: 700; }
+.pro .motion-title { font-size: clamp(2.6rem, 5.6vw, 4.4rem); line-height: 1; }
+.pro .babe-title { font-size: clamp(2.4rem, 4.4vw, 3.4rem); }
+.pro .paper-title { font-size: 1.45rem; letter-spacing: -0.02em; }
+.pro .platform-title { font-size: clamp(1.8rem, 2.8vw, 2.4rem); }
+.pro .mini-title { font-size: 1.25rem; letter-spacing: -0.02em; }
+.pro .contact-title { font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 0.98; }
+.pro .masthead-name { font-size: 1.1rem; letter-spacing: -0.02em; }
+
+/* ---------- Section labels: soft pills ---------- */
+.pro .section-index,
+.pro .research .section-index {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--tint-blue);
+  color: var(--brass);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.pro .status,
+.pro .research .status,
+.pro .experiences .status,
+.pro .mini .status { color: var(--muted); font-family: var(--sans); font-weight: 600; letter-spacing: 0.02em; }
+
+.pro .tech-line { color: var(--muted); }
+
+/* ---------- Body copy ---------- */
+.pro .opening-lede,
+.pro .feature-lede,
+.pro .babe-lede,
+.pro .section-lede,
+.pro .platform-lede { color: var(--muted); }
+
+.pro .opening-lede { font-size: 1.25rem; }
+.pro .platform-lede { font-family: var(--sans); font-style: normal; font-size: 1.1rem; }
+
+.pro .layers dt { color: var(--muted); }
+.pro .layers dd, .pro .mini p { color: #3c4043; }
+
+.pro .abstract dt {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.pro .abstract dd { color: #3c4043; }
+.pro .paper-link { color: var(--brass); }
+
+/* ---------- Hero: a little colour in the air ---------- */
+.pro .opening {
+  background:
+    radial-gradient(45% 55% at 88% 18%, rgba(6, 102, 235, 0.12), transparent 70%),
+    radial-gradient(40% 45% at 72% 78%, rgba(140, 92, 255, 0.10), transparent 70%),
+    #ffffff;
+}
+
+/* the status list becomes four pastel tiles */
+.pro .opening-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.pro .opening-meta div {
+  display: block;
+  padding: 1rem 1.15rem;
+  border-radius: 20px;
+}
+
+.pro .opening-meta div:nth-child(1) { background: var(--tint-blue); }
+.pro .opening-meta div:nth-child(2) { background: var(--tint-violet); }
+.pro .opening-meta div:nth-child(3) { background: var(--tint-green); }
+.pro .opening-meta div:nth-child(4) { background: var(--tint-peach); }
+
+.pro .opening-meta dt {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted);
+  padding: 0 0 0.25rem;
+}
+
+.pro .opening-meta dd { color: var(--text); font-weight: 600; line-height: 1.4; }
+
+.pro .opening-portrait img { border-radius: 32px; }
+
+/* ---------- Buttons: pills ---------- */
+.pro .btn { border-radius: 999px; padding: 0.9rem 1.6rem; }
+.pro .btn-solid { background: var(--black); color: #ffffff; }
+.pro .btn-solid:hover { background: #000000; color: #ffffff; }
+.pro .btn-line { background: var(--ink-2); color: var(--text); border: none; }
+.pro .btn-line:hover { background: var(--ink-3); color: var(--text); }
+.pro .btn-motion {
+  background: var(--black);
+  color: #ffffff;
+  font-family: var(--sans);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ---------- Nav ---------- */
+.pro .masthead { background: rgba(255, 255, 255, 0.9); box-shadow: none; }
+.pro .masthead-links a { color: var(--muted); font-weight: 500; }
+.pro .masthead-links a:hover,
+.pro .masthead-links a.is-current { color: var(--text); border-bottom-color: var(--text); }
+
+.pro .masthead-cta {
+  border-radius: 999px;
+  background: var(--black);
+  color: #ffffff;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.55rem 1.1rem;
+}
+
+/* ---------- Soft grey panels with big rounded corners ---------- */
+.pro .problems,
+.pro .motion {
+  width: min(96%, 1320px);
+  margin: 1.5rem auto;
+  border-radius: 40px;
+  background: var(--ink-2);
+  border: none;
+}
+
+@media (min-width: 1360px) {
+  .pro .problems, .pro .motion { width: calc(100% - 240px); }   /* clear of the road */
+}
+
+.pro .research,
+.pro .experiences { background: #ffffff; }
+
+/* ---------- Data problems table: a white card on grey ---------- */
+.pro .problems-scroll { background: #ffffff; border: none; border-radius: 28px; }
+.pro .problems-table th {
+  color: var(--muted);
+  background: transparent;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border-bottom-color: var(--ink-3);
+}
+.pro .problems-table td { color: #3c4043; border-bottom-color: var(--ink-3); }
+.pro .problems-table td:last-child { color: var(--text); font-weight: 500; }
+.pro .problems-table td:first-child { font-family: var(--sans); font-weight: 600; }
+.pro .problems-table td:first-child a { color: var(--text); text-decoration: none; }
+.pro .problems-table td:first-child a:hover { color: var(--brass); }
+
+/* ---------- Case files and cards ---------- */
+.pro .casefile,
+.pro .casefile--motion {
+  background: var(--ink-2);
+  border: none;
+  border-radius: 24px;
+}
+
+.pro .motion .casefile { background: #ffffff; }
+
+.pro .casefile dt,
+.pro .casefile--motion dt {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted);
+}
+
+.pro .casefile dd { color: var(--text); font-weight: 600; }
+
+.pro .platform { border-left: none; padding-left: 0; }
+.pro .platform img { border-radius: 32px; }
+
+.pro .paper {
+  padding: 2rem;
+  border: none;
+  border-radius: 32px;
+  background: var(--ink-2);
+}
+
+.pro .question {
+  border-left: none;
+  padding: 1.6rem 1.9rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--tint-blue), var(--tint-violet));
+}
+
+.pro .question-label { color: var(--brass); font-family: var(--sans); font-weight: 600; letter-spacing: 0.02em; text-transform: none; }
+.pro .question p {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  color: var(--text);
+}
+
+.pro .feature-tags { font-family: var(--sans); font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--brass); }
+.pro .feature-video { border-radius: 32px; }
+
+/* the timing tower stays dark: it reads like an app widget */
+.pro .tower { border-radius: 28px; overflow: hidden; border: none; }
+.pro .tower li.next { background: linear-gradient(90deg, rgba(6, 102, 235, 0.45), transparent 90%); }
+.pro .tower li.next .pos { background: var(--brass); color: #ffffff; }
+.pro .tower li.next .gap { color: #9cc3ff; }
+
+.pro .babe-gallery img { border-radius: 32px; }
+
+/* ---------- The magazine teaser keeps its paper look ---------- */
+.pro .magazine { box-shadow: none; border-radius: 40px; }
+.pro .magazine .section-index {
+  display: block;
+  padding: 0;
+  background: none;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a6a2a;
+}
+.pro .magazine .btn-solid { background: var(--paper-ink); color: var(--paper); }
+.pro .magazine .btn-solid:hover { background: #000000; color: var(--paper); }
+
+/* ---------- Contact: a black rounded panel ---------- */
+.pro .contact { background: var(--black); color: #ffffff; border-radius: 40px; }
+.pro .contact .section-index { background: rgba(255, 255, 255, 0.12); color: #ffffff; }
+.pro .contact .contact-title { color: #ffffff; }
+.pro .contact .btn-solid { background: #ffffff; color: var(--black); }
+.pro .contact .btn-solid:hover { background: #e8e8ea; color: var(--black); }
+.pro .contact .btn-line { background: rgba(255, 255, 255, 0.12); color: #ffffff; border: none; }
+.pro .contact .btn-line:hover { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.contact-lede {
+  max-width: 56ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #c4c7cc;
+}
+
+/* ---------- Footer ---------- */
+.pro .footer { color: var(--muted); }
+
+/* ---------- The road and the car, in light mode ---------- */
+.pro .page-road.is-vertical::before { background: var(--ink-3); box-shadow: none; }
+.pro .page-road.is-vertical::after {
+  background: repeating-linear-gradient(to bottom, #a3a7ad 0 8px, transparent 8px 18px);
+}
+.pro .page-road.is-strip { background: rgba(255, 255, 255, 0.9); box-shadow: none; }
+.pro .page-road.is-strip::before {
+  background: repeating-linear-gradient(to right, #a3a7ad 0 8px, transparent 8px 18px);
+}
+
+/* one colour for the car here (site.js paints it per section; some of those vanish on white) */
+.pro .road-car { color: var(--brass) !important; filter: drop-shadow(0 3px 6px rgba(25, 28, 31, 0.25)); }
+.pro .road-checkpoint { background: #ffffff; border-color: var(--ink-3); color: var(--muted); }
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  .pro .opening-meta { grid-template-columns: 1fr; }
+  .pro .problems, .pro .motion, .pro .contact, .pro .magazine { border-radius: 28px; }
+}
+
+/* small labels in the same friendly sans as the rest */
+.pro .layers dt,
+.pro .also-label {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--muted);
+}
+
+/* =========================================================
+   ELEGANT PASS: lighter type, neutral cards (after Revolut's careers page)
+   Medium-weight headlines, grey body text, soft grey cards, no gradients.
+   ========================================================= */
+.pro {
+  --sans: 'Geist', 'Inter', system-ui, sans-serif;
+  --display: 'Geist', 'Inter', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --ink-2: #f7f7f7;
+  --muted: #6b6f75;
+  font-family: var(--sans);
+}
+
+/* headlines: medium weight, gently tight */
+.pro .opening-title,
+.pro .section-title,
+.pro .paper-title,
+.pro .babe-title,
+.pro .mini-title,
+.pro .motion-title,
+.pro .contact-title,
+.pro .question p {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.pro .opening-title { font-size: clamp(2.6rem, 5.6vw, 4.6rem); line-height: 1.02; }
+.pro .opening-title em { font-weight: 500; }
+.pro .section-title { font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.05; }
+.pro .motion-title { font-size: clamp(2.4rem, 4.8vw, 3.6rem); }
+.pro .contact-title { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; }
+.pro .masthead-name { font-weight: 600; }
+
+/* no glow behind the hero; neutral tiles instead of pastels */
+.pro .opening { background: #ffffff; }
+.pro .opening-meta div:nth-child(n) { background: var(--ink-2); }
+.pro .opening-meta dd,
+.pro .casefile dd { font-weight: 500; }
+
+/* section labels: quiet text, no pill */
+.pro .section-index,
+.pro .research .section-index {
+  display: block;
+  padding: 0;
+  background: none;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.pro .contact .section-index { background: none; color: rgba(255, 255, 255, 0.6); }
+
+/* the question card: plain grey, like the value cards */
+.pro .question { background: var(--ink-2); }
+
+.pro .btn { font-weight: 500; }
+.pro .problems-table td:last-child { font-weight: 400; }
+.pro .problems-table td:first-child { font-weight: 500; }
+
+.pro .section-title { max-width: 24ch; }
+
+/* =========================================================
+   NARROW HEADINGS: Archivo Narrow for headlines, Geist for body text
+   Narrow faces read smaller, so sizes go up a step and tracking eases off.
+   ========================================================= */
+.pro { --display: 'Archivo Narrow', 'Geist', system-ui, sans-serif; }
+
+.pro .opening-title,
+.pro .section-title,
+.pro .paper-title,
+.pro .babe-title,
+.pro .mini-title,
+.pro .motion-title,
+.pro .contact-title,
+.pro .question p,
+.pro .masthead-name {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.pro .opening-title { font-size: clamp(3rem, 6.4vw, 5.4rem); line-height: 1; }
+.pro .section-title { font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.02; }
+.pro .motion-title  { font-size: clamp(2.7rem, 5.4vw, 4.2rem); }
+.pro .contact-title { font-size: clamp(2.7rem, 5.8vw, 4.6rem); line-height: 1; }
+.pro .babe-title    { font-size: clamp(2.6rem, 4.8vw, 3.6rem); }
+.pro .platform-title { font-size: clamp(2rem, 3vw, 2.6rem); }
+.pro .paper-title   { font-size: 1.6rem; }
+.pro .mini-title    { font-size: 1.4rem; }
+.pro .masthead-name { font-size: 1.25rem; font-weight: 600; }
+
+/* =========================================================
+   BABE: three phone screenshots, side by side, uncropped
+   ========================================================= */
+.babe-gallery--phones {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: none;
+  gap: 0.9rem;
+  min-height: 0;
+  align-items: start;
+}
+
+.babe-gallery--phones img {
+  width: 100%;
+  aspect-ratio: 946 / 2049;       /* the phone's own screen shape, so nothing is cut off */
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+.babe-gallery--phones img:nth-child(2) { margin-top: 2.5rem; }   /* a gentle stagger */
+
+@media (max-width: 900px) {
+  .babe-gallery--phones { gap: 0.6rem; }
+  .babe-gallery--phones img { border-radius: 16px; }
+  .babe-gallery--phones img:nth-child(2) { margin-top: 1.25rem; }
+}
+
+/* =========================================================
+   FIELD NOTES POP-UP (homepage)
+   A white panel over a dimmed page, one rounded card per note.
+   ========================================================= */
+.notes-dialog {
+  width: min(1080px, calc(100% - 2rem));
+  max-height: min(88vh, 960px);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 32px;
+  background: #ffffff;
+  color: var(--text);
+  box-shadow: 0 40px 120px rgba(25, 28, 31, 0.35);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.notes-dialog::backdrop {
+  background: rgba(25, 28, 31, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.notes-dialog[open] { animation: notes-in 0.28s ease-out; }
+
+@keyframes notes-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* the close button stays pinned in the corner while the notes scroll */
+.notes-closebar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notes-closebar .notes-close { margin: 1.25rem 1.25rem 0 0; box-shadow: 0 4px 14px rgba(25, 28, 31, 0.12); }
+
+.notes-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2.25rem 5rem 1.5rem 2.5rem;   /* room on the right for the close button */
+}
+
+.notes-head .section-title { margin-bottom: 0.75rem; }
+.notes-head .section-lede { margin: 0; max-width: 60ch; }
+
+.notes-close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  background: var(--ink-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.notes-close:hover { background: var(--ink-3); }
+
+.notes-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 2.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1rem;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.4rem 1.5rem 1.5rem;
+  border-radius: 24px;
+  background: var(--ink-2);
+}
+
+.note-project {
+  align-self: flex-start;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.note-project:hover { color: var(--brass); }
+
+.note-noticed {
+  margin: 0;
+  font-family: var(--display, var(--sans));
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.note-card dl { margin: 0; display: grid; gap: 0.7rem; }
+.note-card dt { font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+.note-card dd { margin: 0.15rem 0 0; font-size: 0.95rem; line-height: 1.5; color: #3c4043; }
+
+@media (max-width: 560px) {
+  .notes-dialog { width: 100%; max-height: 92vh; margin-bottom: 0; border-radius: 28px 28px 0 0; }
+  .notes-head { padding: 1.5rem 4.25rem 1rem 1.25rem; }
+  .notes-closebar .notes-close { margin: 1rem 1rem 0 0; }
+  .notes-grid { padding: 0.25rem 1.25rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notes-dialog[open] { animation: none; }
+}
+
+/* =========================================================
+   NARROW BODY + DARK CYAN
+   Body text in Instrument Sans at a narrow width (headings stay Archivo Narrow).
+   Accent: dark cyan #0E7490 (5.4:1 on white, passes for text).
+   ========================================================= */
+.pro {
+  --sans: 'Instrument Sans', 'Geist', system-ui, sans-serif;
+  --brass: #0e7490;           /* the accent, now dark cyan */
+  --blue-dark: #0b5f75;       /* hover: a step deeper */
+  font-family: var(--sans);
+  font-stretch: 85%;          /* Instrument Sans' narrow width */
+}
+
+/* buttons, labels and inputs don't always inherit the width */
+.pro button, .pro .btn, .pro .masthead-cta { font-family: var(--sans); font-stretch: 85%; }
+
+/* places that had the old blue written in directly */
+.pro .tower li.next { background: linear-gradient(90deg, rgba(14, 116, 144, 0.55), transparent 90%); }
+.pro .tower li.next .gap { color: #7dd3e8; }
+.pro .road-car { filter: drop-shadow(0 3px 6px rgba(14, 116, 144, 0.3)); }
+
+/* =========================================================
+   VIDEOS
+   F1: beside the title and summary instead of full width.
+   Key Frenzy: plays inside its card, never wider than the card.
+   ========================================================= */
+.feature-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.feature-top .feature-head { margin-top: 0; }
+
+.feature-media { margin: 0; }
+
+.feature-media .feature-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #0c0c0e;
+}
+
+.feature-media figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.mini-video {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  margin: 0.5rem 0 0.75rem;
+  border-radius: 18px;
+  background: #0c0c0e;
+  object-fit: contain;        /* never crops the game */
+}
+
+@media (max-width: 900px) {
+  .feature-top { grid-template-columns: 1fr; gap: 2rem; }
+}
+.feature-media .feature-video { border-radius: 24px; }

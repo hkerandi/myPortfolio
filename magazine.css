@@ -1,0 +1,432 @@
+/* =========================================================
+   ROUTES & RHYTHMS â€” the magazine page
+   A printed issue lying open on a dark sofa: warm paper spreads,
+   italic serif pull quotes, justified columns, page numbers.
+   Loaded only by magazine.html, after home.css.
+   ========================================================= */
+
+   .mag-page {
+    --sheet: #efe8dc;            /* magazine paper, a touch cooler than --paper */
+    --sheet-ink: #1a1512;
+    --sheet-muted: #6b5d50;
+    --rust: #c9522a;             /* the orange-dress accent */
+    --oxblood: #4a1d1a;
+    --body-serif: 'Libre Caslon Text', Georgia, serif;
+  }
+  
+  /* ---------- The issue ---------- */
+  .issue { padding: 2rem 0 6rem; }
+  
+  .issue-intro {
+    max-width: 46ch;
+    margin: 0 0 3rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  
+  /* ---------- A spread: two pages and a fold ---------- */
+  .spread {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 0 5rem;
+    background: var(--sheet);
+    color: var(--sheet-ink);
+    border-radius: 3px;
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.55),
+      0 2px 0 rgba(255, 255, 255, 0.04) inset;
+  }
+  
+  /* the fold down the middle */
+  .spread::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 28px);
+    width: 56px;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(26, 21, 18, 0.10) 40%,
+      rgba(26, 21, 18, 0.22) 50%,
+      rgba(26, 21, 18, 0.10) 60%,
+      transparent);
+  }
+  
+  .spread--tilt { transform: rotate(-0.8deg); }
+  
+  .page {
+    position: relative;
+    min-height: 680px;
+    padding: 2.75rem 2.75rem 4rem;
+  }
+  
+  /* running head (top) and folio (bottom) */
+  .running-head {
+    margin: 0 0 2rem;
+    font-family: var(--body-serif);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sheet-muted);
+  }
+  
+  .folio {
+    position: absolute;
+    bottom: 1.4rem;
+    font-family: var(--body-serif);
+    font-size: 0.72rem;
+    color: var(--sheet-muted);
+  }
+  
+  .page:nth-child(odd) .folio  { left: 2.75rem; }
+  .page:nth-child(even) .folio { right: 2.75rem; }
+  
+  /* ---------- Type ---------- */
+  .kicker {
+    margin: 0 0 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  
+  .pull {
+    margin: 0 auto 2rem;
+    max-width: 24ch;
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    line-height: 1.25;
+  }
+  
+  .pull strong {
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  
+  .feature-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  
+  .feature-title em { font-weight: 500; color: var(--rust); }
+  
+  .byline {
+    margin: 0 0 1.75rem;
+    font-family: var(--body-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--sheet-muted);
+  }
+  
+  .cols {
+    column-count: 2;
+    column-gap: 1.6rem;
+    font-family: var(--body-serif);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+  }
+  
+  .cols p { margin: 0 0 0.9rem; }
+  
+  .drop::first-letter {
+    float: left;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: 3.9rem;
+    line-height: 0.8;
+    padding: 0.3rem 0.45rem 0 0;
+    color: var(--rust);
+  }
+  
+  .cols .subhead {
+    font-family: var(--body-serif);
+    font-weight: 700;
+    break-after: avoid;
+  }
+  
+  .method-line {
+    margin: 1.5rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--sheet-muted);
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--body-serif);
+    font-weight: 700;
+    color: var(--sheet-ink);
+  }
+  
+  /* ---------- Image pages ---------- */
+  .page--image { padding: 0; overflow: hidden; }
+  
+  .page--image img {
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    object-fit: cover;
+  }
+  
+  .caption {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 3.25rem;
+    max-width: 22ch;
+    margin: 0;
+    padding: 0.75rem 0.9rem;
+    background: rgba(239, 232, 220, 0.92);
+    font-family: var(--body-serif);
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--sheet-ink);
+  }
+  
+  /* ---------- The cover ---------- */
+  .page--cover {
+    padding: 0;
+    overflow: hidden;
+    background: var(--oxblood);
+    color: var(--sheet);
+  }
+  
+  .page--cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .page--cover::before {                 /* keeps the masthead readable over the photo */
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(20, 12, 10, 0.75) 0%, rgba(20, 12, 10, 0.1) 40%, rgba(20, 12, 10, 0.1) 60%, rgba(20, 12, 10, 0.85) 100%);
+  }
+  
+  .cover-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 680px;
+    padding: 2.25rem 2.25rem 2.5rem;
+  }
+  
+  .masthead-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+  
+  .masthead-title em { font-weight: 500; }
+  
+  .issue-line {
+    margin: 0.75rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  
+  .coverlines { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  
+  .coverlines li { font-family: var(--serif); font-size: 1.15rem; line-height: 1.25; }
+  
+  .coverlines strong {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f2b08f;
+  }
+  
+  /* ---------- Contents ---------- */
+  .contents-title {
+    margin: 0 0 2rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2.6rem;
+  }
+  
+  .contents { list-style: none; margin: 0; padding: 0; }
+  
+  .contents li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid rgba(26, 21, 18, 0.18);
+  }
+  
+  .contents .num { font-family: var(--serif); font-weight: 900; font-size: 1.5rem; color: var(--rust); }
+  
+  .contents a { color: var(--sheet-ink); text-decoration: none; font-family: var(--serif); font-weight: 700; font-size: 1.15rem; }
+  .contents a:hover { text-decoration: underline; }
+  .contents p { margin: 0.25rem 0 0; font-family: var(--body-serif); font-size: 0.85rem; color: var(--sheet-muted); }
+  
+  .editors-note {
+    margin: 2rem 0 0;
+    font-family: var(--body-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--sheet-muted);
+  }
+  
+  /* ---------- Colour-field pages (no photo needed) ---------- */
+  .page--field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--oxblood);
+    color: var(--sheet);
+  }
+  
+  .page--field .running-head,
+  .page--field .folio { color: rgba(239, 232, 220, 0.7); }
+  
+  .page--field .running-head { position: absolute; top: 2.75rem; left: 2.75rem; }
+  
+  .field-quote {
+    margin: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    line-height: 1.15;
+  }
+  
+  /* ---------- Next issue: pages waiting for their photographs ---------- */
+  .next-issue .spread { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+  
+  .stamp {
+    position: absolute;
+    top: 2.25rem;
+    right: 2.25rem;
+    z-index: 2;
+    padding: 0.45rem 0.8rem;
+    border: 2px solid var(--rust);
+    border-radius: 999px;
+    transform: rotate(4deg);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    background: var(--sheet);
+  }
+  
+  .photo-to-come {
+    position: absolute;
+    left: 2.75rem;
+    bottom: 3.25rem;
+    z-index: 2;
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    background: var(--sheet);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sheet-ink);
+  }
+  
+  /* op-art stripes, for Tiny Travellers */
+  .page--stripes {
+    padding: 0;
+    background:
+      repeating-linear-gradient(118deg, var(--sheet-ink) 0 22px, var(--sheet) 22px 44px);
+  }
+  
+  .page--stripes .stripe-block {
+    position: absolute;
+    inset: 18% 14% 22% 14%;
+    background: var(--rust);
+    border-radius: 999px 999px 6px 6px / 50% 50% 6px 6px;   /* an arch, like a gate at departures */
+  }
+  
+  /* soapstone, for Abagusii in Motion */
+  .page--stone {
+    padding: 0;
+    background:
+      radial-gradient(60% 50% at 30% 30%, rgba(255, 255, 255, 0.35), transparent 70%),
+      radial-gradient(70% 60% at 75% 70%, rgba(120, 80, 70, 0.35), transparent 70%),
+      linear-gradient(160deg, #d8c3b6, #b99d8f 55%, #9c7f73);
+  }
+  
+  .page--stone .stone-word {
+    position: absolute;
+    left: 2.75rem;
+    right: 2.75rem;
+    top: 38%;
+    margin: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 900;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.9;
+    color: rgba(26, 21, 18, 0.82);
+  }
+  
+  /* ---------- Colophon ---------- */
+  .colophon {
+    max-width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  
+  .colophon .cta-row { justify-content: center; }
+  
+  /* ---------- Phones and tablets: one page at a time ---------- */
+  @media (max-width: 860px) {
+    .spread { grid-template-columns: 1fr; }
+    .spread::after { display: none; }
+    .spread--tilt { transform: none; }
+    .page, .cover-inner, .page--image img { min-height: 0; }
+    .page { padding: 2rem 1.5rem 3.5rem; }
+    .page--image img { aspect-ratio: 3 / 4; }
+    .page--cover { min-height: 560px; }
+    .cover-inner { min-height: 560px; }
+    .page--field, .page--stripes, .page--stone { min-height: 420px; }
+    .cols { column-count: 1; text-align: left; }
+    .page:nth-child(odd) .folio, .page:nth-child(even) .folio { left: auto; right: 1.5rem; }
+    .page--field .running-head { left: 1.5rem; top: 2rem; }
+    .photo-to-come { left: 1.5rem; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .spread--tilt { transform: none; }
+  }
